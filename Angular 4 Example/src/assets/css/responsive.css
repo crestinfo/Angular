@@ -1,0 +1,54 @@
+@media (min-width:992px) and (max-width:1199px) {
+    .select-data label { font-size: 16px; }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .retirement h2 { font-size: 15px; }
+    .select-data { width: 32%; }
+    .select-data label { font-size: 16px; }
+    .step-1 .pension-calculator { margin-top: -130px; }
+}
+@media (max-width:767px) {
+    .step-1 .pension-calculator { margin: 30px 0; }
+    .top-bar.step-1,
+    .top-bar.step-2 { height: auto !important; }
+    .per-month p { height: 180px; width: 180px; }
+    .per-month { left: 20%; position: absolute; top: 17%; }
+    .footer-bottom p.get-here { font-size: 20px; margin-bottom: 50px; }
+    .footer-bottom a { line-height: 50px; margin-bottom: 100px; }
+    .footer-bottom p { font-size: 22px; margin-bottom: 20px; }
+    .per-month strong { font-size: 50px; line-height: 50px; }
+    p.retire-plan { font-size: 26px; }
+    .pension-calculator h1 { font-size: 32px; }
+    .pension-text { font-size: 16px; }
+    p { font-size: 18px; }
+    .age { height: 45px; width: 45px; }
+    .retirement { margin-bottom: 60px; margin-top: 20px; }
+    .retirement h2 { height: 100%; margin-bottom: 20px; max-height: unset; overflow: unset; }
+    .select-data { width: 100%; margin-bottom: 15px; }
+    .select-box { margin: 70px auto 30px; }
+    .more-data .chart-box { margin-top: 0;}
+@media (max-width:480px) {
+    p.retire-plan { font-size: 24px; }
+    p { font-size: 15px; }
+    .age { height: 35px; width: 35px; font-size: 16px; }
+    .footer-bottom h3 { font-size: 35px; }
+    .footer-bottom p { font-size: 18px; margin-bottom: 20px; }
+    .select-data label { font-size: 16px; }
+    .select-box { margin: 30px auto 30px; }
+    .more-data .select-box {margin: 30px auto 0;}
+}
+@media (max-width:380px) {
+    .step-2 .pension-calculator,
+    .step-1 .pension-calculator { margin: 30px 0 50px; }
+    .slider.slider-horizontal { height: 20px; width: 50%; }
+    .per-month strong { font-size: 35px; line-height: 35px; }
+    .per-month p { height: 130px;        /*padding-top: 15px;*/ width: 130px; }
+    .per-month span { font-size: 14px; }
+    .footer-bottom h3 { font-size: 30px; }
+    .footer-bottom a { font-size: 20px; width: 250px; }
+    .step-2 .tooltip-inner { font-size: 12px; padding-left: 5px; padding-right: 5px; }
+    .step-2 .tooltip { margin-top: 25px !important; }
+}
+@media(max-width:320px) {
+    .retirement h2 { font-size: 15px; }
+}

@@ -1,0 +1,117 @@
+<section class="top-bar">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="pension-calculator">
+					<p class="retire-plan">Are you saving enough to <span class="cyan-text"> retire ? </span></p>
+					<h1>Try our pension calculator</h1>
+					<p class="pension-text">In a few easy steps our pension contribution calculator will help you work out what you need to save in your personal pension. </p>
+					<p>I’m
+						<input-age-start (changeParentStartAge)='onChangeParentStartAge($event); pensionChartObj.changeChartValues();'></input-age-start>
+						Years old and I want to retire at
+						<input-age-end (changeParentEndAge)='onChangeParentEndAge($event); pensionChartObj.changeChartValues();'></input-age-end>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="retirement">
+					<h2 class="green-text">DESIRED ANNUAL INCOME IN RETIREMENT<span>(in today’s money)<i class="zmdi zmdi-info-outline"></i></span></h2>
+					<div class="value-slider">
+					<b style="float:left;line-height:30px;">£0</b>
+                    <div style="width:78%;display:inline-block">
+                    	<nouislider [connect]="true" [min]="0" [max]="100000" [step]="10" [(ngModel)]="parentRange1" (ngModelChange)="changeRange1($event); pensionChartObj.changeChartValues();" [tooltips]="[true]"></nouislider>              
+                    </div>    
+					<b style="float:right;line-height:30px;">£100,000</b>
+					
+                    </div>
+                    
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12 current-value">
+				<div class="retirement">
+					<h2>CURRENT VALUE OF PENSION POTS</h2>
+					<div class="value-slider">
+                        <b style="float:left;line-height:30px;">£0</b>
+                        <div style="width:78%;display:inline-block">
+                            <nouislider [connect]="true" [min]="0" [max]="100000" [step]="10" [(ngModel)]="parentRange2" (ngModelChange)="changeRange2($event); pensionChartObj.changeChartValues();" [tooltips]="[true]"></nouislider>              
+                        </div>    
+                        <b style="float:right;line-height:30px;">£100,000</b>
+                        
+                    </div>
+				</div>
+			</div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <form>
+                    <div class="select-box">
+                        <div class="select-data">
+                            <label>RETURN ASSUMPTIONS:</label>
+                            <div class="select_dropdown">
+                                <select1 (changeParentSelect1)='onChangeParentSelect1($event); pensionChartObj.changeChartValues();'></select1>
+                            </div>
+                        </div>
+                        <div class="select-data">
+                            <label>INFLATION:</label>
+                            <div class="select_dropdown">
+                                <select2 (changeParentSelect2)='onChangeParentSelect2($event); pensionChartObj.changeChartValues();'></select2>
+                            </div>
+                        </div>
+                        <div class="select-data">
+                            <label>MANAGMENT FEE:</label>
+                            <div class="select_dropdown">
+                                <select3 (changeParentSelect3)='onChangeParentSelect3($event); pensionChartObj.changeChartValues();'></select3>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--<div align="center" style="clear:both;">
+            	<br /><br />
+            	<div><b>Your age is :</b>{{parentAgeStart}}</div>
+                <div><b>Retire at:</b>{{parentAgeEnds}}</div>
+                <div><b>Annual Income:</b>{{parentRange1}}</div>
+                <div><b>Pention Income:</b>{{parentRange2}}</div>
+                {{parentSelect1}}  {{parentSelect2}} {{parentSelect3}}
+            </div>-->
+            <div class="chart-box">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<!--<div class="more-select-data">
+						<div class="select-data">
+							<div class="select_dropdown">
+								<select class="selectBox" name="e_sex">
+									<option>MORE DATA</option>
+								   
+								</select>
+							</div>
+						</div>
+					</div>-->
+                    
+					<div id="container">
+                    	<pension-chart 
+                        #pensionChartObj
+                        [chartAge]='parentAgeStart'
+                        [chartRetire]='parentAgeEnds'
+                        [chartRange1] = 'parentRange1'
+                        [chartRange2] = 'parentRange2'
+                        [chartSelect1] = 'parentSelect1'
+                        [chartSelect2] = 'parentSelect2'
+                        [chartSelect3] = 'parentSelect3' 
+                        >
+                        
+                        </pension-chart>
+                    </div>
+					<div class="per-month">
+						<p><span>You must save </span><strong> £{{parentSaved}} </strong><span>PER MONTH</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<h3>Seem like a lot ?</h3>
+					<p class="get-here">The sooner you start, the sooner you get there!</p>
+					<p> Why not give the Nutmeg pension a try? </p>
+					<a href="javascript:;"> Start pension </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
